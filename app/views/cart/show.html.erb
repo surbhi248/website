@@ -1,0 +1,20 @@
+<div class ="container">
+	<% if !@orders.empty? %>
+	<% @orders.each do |item| %>
+	<div class ="row justify-content-md-center">
+		<div class ="col-8 mt-4">
+<div class ="cart text-center shadow mb-5 bg-white rounded">
+<div class ="cart-body">
+<h5 class="cart-title"><%= item.product.name%></h5>
+<p class="cart-text"><%= item.quantity%></p>
+<p class ="cart-body"><%= item.price%></p>
+</div>
+ 
+</div>
+
+			</div>
+			<% end %>
+		</div>
+		<div class="flickr_pagination">
+			<%= will_paginate @orders, :container=> false>
+		</div> 
